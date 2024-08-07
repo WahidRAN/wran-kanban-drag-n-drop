@@ -15,26 +15,31 @@
 <script setup lang="ts">
 import { defineProps, defineEmits } from 'vue'
 import Card from './KanbanCard.vue'
+import { Stage, Contact } from './types'
 
-const props = defineProps({
-  stage: Object,
-  contacts: Array
-})
+const props = defineProps<{
+  stage: Stage
+  contacts: Contact[]
+}>()
 
 const emit = defineEmits(['move-contact'])
 
-const onDragStart = (event, contactId) => {
-  event.dataTransfer.setData('contactId', contactId)
+const onDragStart = (event: DragEvent, contactId: string) => {
+  if (event.dataTransfer) {
+    event.dataTransfer.setData('contactId', contactId)
+  }
 }
 
-const onDragOver = (event) => {
+const onDragOver = (event: DragEvent) => {
   event.preventDefault()
 }
 
-const onDrop = (event) => {
+const onDrop = (event: DragEvent) => {
   event.preventDefault()
-  const contactId = event.dataTransfer.getData('contactId')
-  emit('move-contact', contactId, props.stage.id)
+  const contactId = event.dataTransfer?.getData('contactId')
+  if (contactId) {
+    emit('move-contact', contactId, props.stage.id)
+  }
 }
 </script>
 

@@ -6,13 +6,16 @@
 
 <script setup lang="ts">
 import { defineProps } from 'vue'
+import { Contact } from './types'
 
-const props = defineProps({
-  contact: Object
-})
+const props = defineProps<{
+  contact: Contact
+}>()
 
-const onDragStart = (event) => {
-  event.dataTransfer.setData('contactId', props.contact.id)
+const onDragStart = (event: DragEvent) => {
+  if (event.dataTransfer) {
+    event.dataTransfer.setData('contactId', props.contact.id)
+  }
 }
 </script>
 
