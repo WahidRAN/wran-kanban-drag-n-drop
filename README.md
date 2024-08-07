@@ -20,6 +20,12 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 npm install
 ```
 
+## Start Mock API
+
+```sh
+json-server --watch db.json --port 3000
+```
+
 ### Compile and Hot-Reload for Development
 
 ```sh
