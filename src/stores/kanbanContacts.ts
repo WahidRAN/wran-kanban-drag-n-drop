@@ -1,6 +1,11 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
-import type { ApiResponse, KanbanContact } from '@/types/KanbanTypes'
+import {
+  ContactsApiResponseSchema,
+  type ApiResponse,
+  type KanbanContact
+} from '@/types/KanbanTypes'
+import { validateApiResponse } from '@/utils/validateApiResponse'
 
 export const useKanbanContactsStore = defineStore('kanbanContacts', () => {
   const allContacts = ref<KanbanContact[]>([])
@@ -20,9 +25,12 @@ export const useKanbanContactsStore = defineStore('kanbanContacts', () => {
       const res = await fetch(`http://localhost:3000/contacts-stage-${stageId}`)
       if (res.status === 404) return
       if (!res.ok) throw new Error('Failed to fetch contacts')
-      const data: ApiResponse<KanbanContact> = await res.json()
 
-      setContacts(data.results)
+      const jsonData = await res.json()
+      const data: ApiResponse<KanbanContact> = jsonData
+      const isValidData = validateApiResponse(ContactsApiResponseSchema, jsonData)
+
+      if (isValidData) setContacts(data.results)
     } catch (error) {
       console.error('Error fetching contacts:', error)
     }

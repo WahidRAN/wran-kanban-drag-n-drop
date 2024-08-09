@@ -9,43 +9,109 @@
         "id": "018f3d6b-335e-7c8e-b5c7-7792b3ee9f15",
         "name": "Attempting contact",
         "header_color": "#E8F8F5",
-        "order": 1
+        "description": "",
+        "pipeline": "018f3d68-5d0d-7890-9883-0fcaef1d60e1",
+        "order": 1,
+        "created_at": "2024-05-03T07:46:26.787908Z"
       },
       {
         "id": "018f3d6b-a5b7-7124-b0d0-cf5a081f869b",
         "name": "Contact established",
         "header_color": "#A9DFBF",
-        "order": 2
+        "description": "",
+        "pipeline": "018f3d68-5d0d-7890-9883-0fcaef1d60e1",
+        "order": 2,
+        "created_at": "2024-05-03T07:46:56.058682Z"
       },
       {
         "id": "018f3d6c-04bb-706c-9853-11a0f54697fe",
         "name": "Pending documents",
         "header_color": "#F4ECF7",
-        "order": 3
+        "description": "",
+        "pipeline": "018f3d68-5d0d-7890-9883-0fcaef1d60e1",
+        "order": 3,
+        "created_at": "2024-05-03T07:47:20.385195Z"
       },
       {
         "id": "018f3d6c-74b0-76ee-8896-ec7d51d576df",
         "name": "Qualified",
         "header_color": "#52BE80",
-        "order": 4
+        "description": "",
+        "pipeline": "018f3d68-5d0d-7890-9883-0fcaef1d60e1",
+        "order": 4,
+        "created_at": "2024-05-03T07:47:49.044906Z"
+      },
+      {
+        "id": "0190265a-23fa-77ff-927a-a53247d88627",
+        "name": "New",
+        "header_color": "#FFFDEC",
+        "description": "",
+        "pipeline": "01902659-9ffa-7188-8761-42974ba37a9a",
+        "order": 5,
+        "created_at": "2024-06-17T13:19:20.069133Z"
       },
       {
         "id": "018f3d6d-2a4f-733b-bb52-b8ec75bd4d0f",
         "name": "Pending payment",
         "header_color": "#A569BD",
-        "order": 6
+        "description": "",
+        "pipeline": "018f3d68-5d0d-7890-9883-0fcaef1d60e1",
+        "order": 6,
+        "created_at": "2024-05-03T07:48:35.540551Z"
+      },
+      {
+        "id": "0190265c-c370-7105-a68b-7d8c97d42f0a",
+        "name": "Attempting contact",
+        "header_color": "#DFFFDE",
+        "description": "",
+        "pipeline": "01902659-9ffa-7188-8761-42974ba37a9a",
+        "order": 6,
+        "created_at": "2024-06-17T13:22:11.960834Z"
+      },
+      {
+        "id": "018f3d6c-ce54-74bd-8228-b429aa443875",
+        "name": "Waiting for EL",
+        "header_color": "#F8C471",
+        "description": "",
+        "pipeline": "01902659-9ffa-7188-8761-42974ba37a9a",
+        "order": 7,
+        "created_at": "2024-05-03T07:48:11.993006Z"
+      },
+      {
+        "id": "018f3d6d-9b6a-71bc-8bea-d73c20e4f83b",
+        "name": "EMGS in process",
+        "header_color": "#3498DB",
+        "description": "",
+        "pipeline": "01902659-9ffa-7188-8761-42974ba37a9a",
+        "order": 8,
+        "created_at": "2024-05-03T07:49:04.496289Z"
       },
       {
         "id": "018f3d6e-8b5d-71d8-bb2d-43fc85add89d",
         "name": "Enrolled",
         "header_color": "#1D8348",
-        "order": 9
+        "description": "",
+        "pipeline": "018f3d68-5d0d-7890-9883-0fcaef1d60e1",
+        "order": 9,
+        "created_at": "2024-05-03T07:50:05.922404Z"
+      },
+      {
+        "id": "018f3d6e-21cd-7900-8a9d-c21ad42b7c8b",
+        "name": "EMGS approved",
+        "header_color": "#DC7633",
+        "description": "",
+        "pipeline": "01902659-9ffa-7188-8761-42974ba37a9a",
+        "order": 9,
+        "created_at": "2024-05-03T07:49:38.898750Z"
       },
       {
         "id": "018f3d6e-e411-720a-a724-df8c1f57679d",
         "name": "Invoiced",
         "header_color": "#0000FF",
-        "order": 10
+        "description": "",
+        "pipeline": "018f3d68-5d0d-7890-9883-0fcaef1d60e1",
+        "order": 10,
+        "created_at": "2024-05-03T07:50:28.630197Z"
       }
     ]
   },

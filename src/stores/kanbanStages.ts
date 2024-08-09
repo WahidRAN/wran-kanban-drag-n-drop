@@ -1,6 +1,7 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
-import type { ApiResponse, KanbanStage } from '@/types/KanbanTypes'
+import { StagesApiResponseSchema, type ApiResponse, type KanbanStage } from '@/types/KanbanTypes'
+import { validateApiResponse } from '@/utils/validateApiResponse'
 
 export const useKanbanStagesStore = defineStore('kanbanStages', () => {
   const stages = ref<KanbanStage[]>([])
@@ -10,9 +11,11 @@ export const useKanbanStagesStore = defineStore('kanbanStages', () => {
     try {
       const res = await fetch('http://localhost:3000/stages')
       if (!res.ok) throw new Error('Failed to fetch stages')
-      const data: ApiResponse<KanbanStage> = await res.json()
+      const jsonData = await res.json()
+      const data: ApiResponse<KanbanStage> = jsonData
 
-      if (stages.value.length === 0) {
+      const isValidData = validateApiResponse(StagesApiResponseSchema, data)
+      if (stages.value.length === 0 && isValidData) {
         stages.value = data.results
       }
     } catch (error) {
