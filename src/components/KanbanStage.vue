@@ -13,13 +13,12 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, defineEmits } from 'vue'
 import Card from './KanbanCard.vue'
-import type { Stage, Contact } from '@/types/KanbanTypes'
+import type { KanbanStage, KanbanContact } from '@/types/KanbanTypes'
 
 const props = defineProps<{
-  stage: Stage
-  contacts: Contact[]
+  stage: KanbanStage
+  contacts: KanbanContact[]
 }>()
 
 const emit = defineEmits<{

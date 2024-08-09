@@ -5,11 +5,10 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps } from 'vue'
-import { Contact } from './types'
+import type { KanbanContact } from '@/types/KanbanTypes'
 
 const props = defineProps<{
-  contact: Contact
+  contact: KanbanContact
 }>()
 
 const onDragStart = (event: DragEvent) => {
